@@ -10,7 +10,9 @@
 // See Lecture 52, part 1
 // var byeSpeaker =
 
+
 // DO NOT attach the speakWord variable to the 'byeSpeaker' object.
+
 
 
 // STEP 8: Rewrite the 'speak' function such that it is attached to the
@@ -18,16 +20,19 @@
 // See Lecture 52, part 2
 
 
-
-function goodBye(){
-	var speakWord = "Good Bye";
-	return function speak(name) {
-    	console.log(speakWord + " " + name);
-    	return speakWord + " " + name;
-	}
-
-}
-
 // STEP 9: Expose the 'byeSpeaker' object to the global scope. Name it
 // 'byeSpeaker' on the global scope as well.
 // xxxx.xxxx = byeSpeaker;
+
+
+(function (window){
+	var byeSpeaker = {};
+	var speakWord = "Good Bye";
+	byeSpeaker.speak =  function (name) {
+  		console.log(speakWord + " " + name);
+  		return speakWord + " " + name;
+	}
+
+	window.byeSpeaker = byeSpeaker;
+
+})(window);

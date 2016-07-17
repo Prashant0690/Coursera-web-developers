@@ -44,8 +44,7 @@ var s = "";
 // using the 'speak' method or either helloSpeaker's or byeSpeaker's
 // 'speak' method.
 // See Lecture 50, part 1
-var funcGoodBye = goodBye();
-var funcHello = hello();
+
 for (var i = 0; i < names.length; i++) {
 
   // STEP 11:
@@ -65,12 +64,12 @@ for (var i = 0; i < names.length; i++) {
   // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
   // name in the loop.
   if (names[i].charAt(0) == 'j' || names[i].charAt(0) == 'J') {
-     s = funcGoodBye(names[i]);
+     s = byeSpeaker.speak(names[i]);
      //console.log(funcGoodBye(names[i]));
      text += s + "<br>";
     
   } else {
-     s = funcHello(names[i]);
+     s = helloSpeaker.speak(names[i]);
      text += s + "<br>";
   }
 
